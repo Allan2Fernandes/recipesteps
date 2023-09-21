@@ -40,7 +40,7 @@ const requestListener = async function (req, res) {
 
     const request = new sql.Request();
     request.input('selectedRecipeSetID', sql.Int, selectedRecipeSetID)
-    request.input('stepNo', sql.Int, stepNo)
+    request.input('stepNo', sql.Int, parseInt(stepNo) + 1)
 
     try {
         const result = await new Promise((resolve, reject) => {
