@@ -6,7 +6,7 @@ const process = require('node:process');
 
 const sql = require("mssql");
 
-const host = 'localhost';
+const host = '0.0.0.0';
 //const baseURL = "http://10.0.109.150:5052/"
 const baseURL = "https://localhost:7000/"
 
