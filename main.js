@@ -2,6 +2,7 @@ const DatabaseHandler = require("./DatabaseHandler")
 const http = require("http");
 const url = require('url');
 const fs = require('fs');
+const process = require('node:process');
 
 const sql = require("mssql");
 
@@ -9,11 +10,13 @@ const host = 'localhost';
 //const baseURL = "http://10.0.109.150:5052/"
 const baseURL = "https://localhost:7000/"
 
+var databaseVariables = process.env.DatabaseConnection.toString().split(',')
+console.log(databaseVariables)
 var config = {
-    user: 'sa',
-    password: '123456',
-    server: 'LAPTOP-Q8KHCDNT',
-    database: 'GO_PVG32BLOCK'
+    user: databaseVariables[1],
+    password: databaseVariables[2],
+    server: databaseVariables[0],
+    database: databaseVariables[3]
 }
 
 var dbHandler = new DatabaseHandler(config);
