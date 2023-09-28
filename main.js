@@ -52,9 +52,9 @@ const requestListener = async function (req, res) {
                 }
             });
         });
-
-        const image1Source = `${baseURL}api/Image/getImageOnFileName/${result.recordset[0]['ParamValue']}`
-        const image2Source = `${baseURL}api/Image/getImageOnFileName/${result.recordset[1]['ParamValue']}`
+        const image1Source = `${baseURL}api/Image/getImageOnFileName/${result.recordset[0]['ParamValue']}/${new Date().getTime().toString()}`
+        const image2Source = `${baseURL}api/Image/getImageOnFileName/${result.recordset[1]['ParamValue']}/${new Date().getTime().toString()}`
+        console.log(image1Source)
         // Read the HTML template file
         fs.readFile('index.html', 'utf8', (readErr, template) => {
             if (readErr) {
